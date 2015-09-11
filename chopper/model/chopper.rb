@@ -11,6 +11,6 @@ class Chopper
 	end
 	
 	def sum(array)
-	   'vacio'    
+	   array.empty? ? 'vacio':'uno'    
 	end
 end	
