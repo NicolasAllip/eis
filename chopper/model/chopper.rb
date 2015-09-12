@@ -19,9 +19,13 @@ class Chopper
 
 	def sum_of_elements(array)
 	
-		total = array.inject{|sum,each| sum + each}
-		total ==1 ? 'uno' : 'cuatro'		
+	    sum_elements = array.inject{|sum,each| sum + each}
+	    total_of_digit = sum_elements.to_s.split('').map { |digit| digit.to_i }.size
+		
+	    (total_of_digit.equal?1) ? number_of_digit_eq_one(sum_elements) : 'uno,ocho'
 	end
-	
-	
+
+	def number_of_digit_eq_one(int)
+	    (int.equal?1) ? 'uno' : 'cuatro'
+	end
 end	
