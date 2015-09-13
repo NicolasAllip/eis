@@ -25,14 +25,14 @@ class Chopper
         end
 
         def number_of_digit_eq_one_or_two(int,digits)
-          ((digits.size).equal?1) ? number_of_digit_eq_one(int) : number_of_digit_eq_two()
+          ((digits.size).equal?1) ? number_of_digit_eq_one(int) : number_of_digit_eq_two(int)
         end
 
         def number_of_digit_eq_one(int)
     	  (int.equal?1) ? 'uno' : 'cuatro'	
         end
 
-        def number_of_digit_eq_two()
-    	  'uno,ocho'
+        def number_of_digit_eq_two(int)
+    	  (int.equal?18) ? 'uno,ocho' : 'nueve,nueve'
     end
 end	
