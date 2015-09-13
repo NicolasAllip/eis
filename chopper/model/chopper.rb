@@ -13,26 +13,25 @@ class Chopper
 	end
 	
 	def sum(array)
-          array.empty? ? 'vacio' : sum_of_elements(array)
-        end
+		array.empty? ? 'vacio' : sum_of_elements(array)
+	end
 
-        def sum_of_elements(array)
+	def sum_of_elements(array)
+	
+		total = array.inject{|sum,each| sum + each}
+		digits = total.to_s.split('').map { |digit| digit.to_i }
+		array_numbers_string = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve']
 
-          sum_elements = array.inject{|sum,each| sum + each}
-          digits = sum_elements.to_s.split('').map { |digit| digit.to_i }
+		((digits.size).equal?3) ? 'demasiado grande' : number_of_digit_eq_one_or_two(digits,array_numbers_string)
+	end
 
-          ((digits.size).equal?3) ? 'demasiado grande' : number_of_digit_eq_one_or_two(sum_elements,digits) 
-        end
+	def number_of_digit_eq_one_or_two(digits,array_numbers_string)
+		
+		string_number_of_digit_eq_one = array_numbers_string[digits.first]
+		((digits.size).equal?1) ?  string_number_of_digit_eq_one : string_number_of_digit_eq_two(digits,array_numbers_string)
+	end
 
-        def number_of_digit_eq_one_or_two(int,digits)
-          ((digits.size).equal?1) ? number_of_digit_eq_one(int) : number_of_digit_eq_two(int)
-        end
-
-        def number_of_digit_eq_one(int)
-    	  (int.equal?1) ? 'uno' : 'cuatro'	
-        end
-
-        def number_of_digit_eq_two(int)
-    	  (int.equal?18) ? 'uno,ocho' : 'nueve,nueve'
-    end
+	def string_number_of_digit_eq_two (digits,array_numbers_string)	
+	    array_numbers_string[digits.first]+','+array_numbers_string[digits.at(1)]		
+	end
 end	
