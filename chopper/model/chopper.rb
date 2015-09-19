@@ -38,4 +38,4 @@ class Chopper
 	def string_number_of_digit_eq_two (digits,array_numbers_string)	
 	    array_numbers_string[digits.first]+','+array_numbers_string[digits.at(1)]		
 	end
-end	
+end
