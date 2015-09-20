@@ -2,7 +2,7 @@ class Chopper
 
 
 # chop(int,array) return the index(that is represented by int), 
-# inside the array. else return -1. 
+# inside the array, else return -1. 
 # In both methods the array not contains negative number.
 	
 	def chop(number,array)
