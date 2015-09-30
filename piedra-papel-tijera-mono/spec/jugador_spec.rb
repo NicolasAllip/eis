@@ -25,6 +25,9 @@ describe 'Jugador' do
 	let(:tijera) { Tijera.new }
 	let(:papel) { Papel.new }
 
+	it 'victorias de un jugador al iniciar es 0' do
+	  expect(jugador1.victorias).to eq 0
+	end
 	it 'jugadores con mismos elementos es un empate' do
           jugador1.elige(piedra)
           jugador2.elige(piedra)
