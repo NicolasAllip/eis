@@ -14,4 +14,8 @@ describe 'Papel' do
 	it 'gana a piedra' do
 	  expect(papel.gana_contra_piedra?()).to eq true
 	end	
+	
+	it 'pierde con tijera' do
+	  expect(papel.gana_contra_tijera?()).to eq false
+	end	
 end
