@@ -34,4 +34,10 @@ describe 'Jugador' do
 	  jugador2.elige(tijera)
 	  expect(jugador1.le_gana_a?(jugador2)).to be_truthy
 	end
+
+	it 'judador1 elige tijera, jugador2 elige piedra, pierde jugador1' do
+	  jugador1.elige(tijera)
+	  jugador2.elige(piedra)
+	  expect(jugador2.pierde_contra?(jugador1)).to be_falsey
+	end	
 end

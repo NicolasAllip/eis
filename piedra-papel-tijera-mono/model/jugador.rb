@@ -10,6 +10,10 @@ class Jugador
 	def le_gana_a?(jugador)
 	  self.elemento_actual().gana_contra?(jugador.elemento_actual())
 	end
+	
+	def pierde_contra?(jugador)
+	  self.elemento_actual().pierde_vs?(jugador.elemento_actual())
+	end
 
 	def aumentar_victorias
 	  @victorias += 1
