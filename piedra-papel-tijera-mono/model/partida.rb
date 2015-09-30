@@ -38,4 +38,16 @@ class Partida
 	def jugador2
 	  @jugador2
 	end
+
+	def resultado_partida
+	  if cantidad_rondas == 0 
+	  	if jugador1.victorias == jugador2.victorias
+	  	"EMPATE"
+	    elsif jugador1.victorias > jugador2.victorias
+	      @jugador1
+	    else
+	      @jugador2
+	   end
+	end
+	end
 end
