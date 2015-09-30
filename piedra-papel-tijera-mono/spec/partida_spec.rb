@@ -35,4 +35,17 @@ describe 'Partida' do
           partida.jueguen_ronda
           expect(partida.resultado_partida).to eq jugador1
 	end
+	
+	it 'empate' do
+	  partida.jugador1.elige(piedra)
+          partida.jugador2.elige(piedra)
+          partida.jueguen_ronda
+          partida.jugador1.elige(piedra)
+          partida.jugador2.elige(piedra)
+          partida.jueguen_ronda
+          partida.jugador1.elige(piedra)
+          partida.jugador2.elige(piedra)
+          partida.jueguen_ronda
+          expect(partida.resultado_partida).to eq "EMPATE"
+	end
 end
