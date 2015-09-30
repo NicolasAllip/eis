@@ -15,6 +15,7 @@ require 'rspec'
 require_relative '../model/jugador'
 require_relative '../model/piedra'
 require_relative '../model/tijera'
+require_relative '../model/papel'
 
 describe 'Jugador' do
 
@@ -22,6 +23,7 @@ describe 'Jugador' do
 	let(:jugador2) { Jugador.new }
 	let(:piedra) { Piedra.new }
 	let(:tijera) { Tijera.new }
+	let(:papel) { Papel.new }
 
 	it 'jugadores con mismos elementos es un empate' do
           jugador1.elige(piedra)
@@ -39,5 +41,13 @@ describe 'Jugador' do
 	  jugador1.elige(tijera)
 	  jugador2.elige(piedra)
 	  expect(jugador2.pierde_contra?(jugador1)).to be_falsey
+	end
+
+	it 'jugadores pelean gana jugador1 por ende aumenta en 1 las victorias' do
+          jugador2.elige(piedra)
+          jugador1.elige(papel)
+          jugador1.peleo_contra(jugador2)
+          expect(jugador1.victorias).to eq 1
 	end	
 end
+
