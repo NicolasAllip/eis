@@ -1,0 +1,2 @@
+class Piedra 
+end
