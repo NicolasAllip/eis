@@ -46,6 +46,12 @@ def devolver_barco(coordenada)
   end
 end
 
+def devolver_barco_crucero(coordenada)
+  @tablero.get_barcos.detect do |each|
+    each.primer_x == coordenada.first && each.primer_y == coordenada.last
+  end
+end
+
 def tablero
   @tablero
 end
@@ -53,6 +59,10 @@ end
 def disparo(coordenada)
   if !@tablero.posiciones_ocupadas.include?(coordenada)
     "Agua"
+  else
+    @barco_atacado = devolver_barco_crucero(coordenada)
+    @barco_atacado.disparos_recibidos += 1
+    return @barco_atacado.estado
   end
 end
 

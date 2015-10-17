@@ -44,4 +44,13 @@ describe 'BatallaNaval' do
     @coordenada = [5,2]
     expect(batalla_naval.disparo(@coordenada)).to eq "Agua"
   end
+  
+  it 'verificar que un disparo a la coordenada (5,2) dania a una barco' do
+    @coordenada = [5,2]
+    batalla_naval.crear_y_ubicar_crucero([5,2],"Vertical")
+    @barco_atacado = batalla_naval.devolver_barco_crucero(@coordenada)
+    @barco_atacado.disparos_recibidos += 1
+    expect(@barco_atacado.disparos_recibidos).to eq 1
+  end
+  
 end

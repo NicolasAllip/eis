@@ -6,10 +6,10 @@ Scenario: Disparo y toco agua
   When disparo a esa coordenada dada
   Then la coordenada 5,5 es agua
 
-@wip
+
 Scenario: Disparo y toco un barco pero no lo hundo
   
-  Given la coordenadas 1,2 ocupada 
+  Given la coordenada 1,2 ocupada 
   When disparo a esa coordenada dada
   Then daño una parte del barco tipo crucero pero no lo hundo
 

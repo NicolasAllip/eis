@@ -2,12 +2,14 @@ require_relative 'tablero'
 
 class Crucero
 
-attr_accessor :primer_coordenada, :segunda_coordenada, :orientacion
+attr_accessor :primer_coordenada, :segunda_coordenada, :orientacion, :disparos_recibidos
 
 def initialize(coordenada,orientacion)
   @primer_coordenada = coordenada
   @orientacion = orientacion
   @tamanio = 2
+  @estado 
+  @disparos_recibidos = 0
   @segunda_coordenada = self.segunda_coordenada_dependiendo_orientacion(orientacion)
 end
 
@@ -48,4 +50,11 @@ def segunda_coordenada_dependiendo_orientacion(orientacion)
   end
 end
 
+def estado
+  if @disparos_recibidos != @tamanio
+    "Esta daniado"
+  else
+    "Esta Hundido"
+  end
+end
 end
