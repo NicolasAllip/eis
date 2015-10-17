@@ -6,7 +6,7 @@ require_relative '../model/batalla_naval'
 
 describe 'BatallaNaval' do
 
-  let(:batalla_naval) { BatallaNaval.new(5,5) }
+  let(:batalla_naval) { BatallaNaval.new }
   let(:submarino) { Submarino.new(1,2) }
   let(:submarino1) { Submarino.new(2,3) }
 

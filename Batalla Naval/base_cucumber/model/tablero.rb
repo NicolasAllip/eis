@@ -16,6 +16,14 @@ def cantidad_barcos
   @cantidad_barcos
 end
 
+def cantidad_filas
+  @cantidad_filas
+end
+
+def cantidad_columnas
+  @cantidad_columnas
+end
+
 def agregar_barco(barco)
   @barcos.push(barco)
   @cantidad_barcos += 1

@@ -1,9 +1,10 @@
 require_relative 'tablero'
 require_relative 'submarino'
+
 class BatallaNaval
 
-def initialize(ancho,alto)
-  @tablero = Tablero.new(ancho,alto)
+def initialize
+  @tablero = Tablero.new(5,5)
 end
 
 def crear_y_ubicar_submarino(x,y)
