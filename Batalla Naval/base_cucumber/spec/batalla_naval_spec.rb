@@ -14,11 +14,11 @@ describe 'BatallaNaval' do
   let(:tablero) { Tablero.new(5,5) }
 
   it 'cantidad de filas del tablero' do
-    expect(batalla_naval.tablero.cantidad_filas).to eq 5
+    expect(batalla_naval.tablero.cantidad_filas).to eq 20
   end
 
   it 'cantidad de columnas del tablero' do
-    expect(batalla_naval.tablero.cantidad_columnas).to eq 5
+    expect(batalla_naval.tablero.cantidad_columnas).to eq 20
   end
 
   it 'verifico cantidad de barcos' do
@@ -34,6 +34,11 @@ describe 'BatallaNaval' do
     batalla_naval.tablero.agregar_barco(submarino)
     batalla_naval.tablero.agregar_barco(submarino1)
     expect(batalla_naval.devolver_barco([1,2])).to eq submarino
+  end
+  
+  it 'verificar que la coordenada (20,30) esta fuera de un tablero 5 x 5' do
+    
+    expect(batalla_naval.crear_y_ubicar_submarino([20,30])).to eq "Fuera del Tablero"
   end  
 
 end

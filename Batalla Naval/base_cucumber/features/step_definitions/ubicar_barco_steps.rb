@@ -30,3 +30,18 @@ end
 Then(/^no se puede ubicar$/) do
   @resultado == "coordenada ya ocupada"
 end
+
+##########################
+
+Given(/^la coordenada (\d+),(\d+)$/) do |x, y|
+  @batalla_naval = BatallaNaval.new
+  @coordenada_fuera_Tablero = [x,y]
+end
+
+When(/^ubico el barco tipo submarino en esa coordenada dada$/) do
+  @resultado = @batalla_naval.crear_y_ubicar_submarino(@coordenada_fuera_Tablero)
+end
+
+Then(/^fuera del tablero$/) do
+  @resultado == "Fuera del Tablero"
+end

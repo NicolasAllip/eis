@@ -5,12 +5,16 @@ require_relative 'crucero'
 class BatallaNaval
 
 def initialize
-  @tablero = Tablero.new(5,5)
+  @tablero = Tablero.new(20,20)
 end
 
 def crear_y_ubicar_submarino(coordenada)
   @submarino = Submarino.new(coordenada)
-  @tablero.posiciones_ocupadas.include?(coordenada) ? "coordenada ya ocupada" : @tablero.agregar_barco(@submarino)
+  if @submarino.x.to_i > @tablero.cantidad_columnas || @submarino.y.to_i > @tablero.cantidad_filas 
+    "Fuera del Tablero"
+  else
+    @tablero.posiciones_ocupadas.include?(coordenada) ? "coordenada ya ocupada" : @tablero.agregar_barco(@submarino)
+  end
 end
 
 def coordenadas_ocupadas_v(coordenada)
