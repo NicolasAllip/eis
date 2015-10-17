@@ -37,8 +37,11 @@ describe 'BatallaNaval' do
   end
   
   it 'verificar que la coordenada (20,30) esta fuera de un tablero 5 x 5' do
-    
     expect(batalla_naval.crear_y_ubicar_submarino([20,30])).to eq "Fuera del Tablero"
   end  
-
+  
+  it 'verificar que un disparo a la coordenada (5,2) da "Agua"' do
+    @coordenada = [5,2]
+    expect(batalla_naval.disparo(@coordenada)).to eq "Agua"
+  end
 end

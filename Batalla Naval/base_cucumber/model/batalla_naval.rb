@@ -50,4 +50,10 @@ def tablero
   @tablero
 end
 
+def disparo(coordenada)
+  if !@tablero.posiciones_ocupadas.include?(coordenada)
+    "Agua"
+  end
+end
+
 end
