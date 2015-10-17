@@ -3,15 +3,30 @@ require_relative '../../model/batalla_naval'
 
 Given(/^la coordenada (\d+),(\d+) vacia$/) do |x, y|
   @batalla_naval = BatallaNaval.new
-  @x,@y = [x,y]
+  @coordenada = [x,y]
 end
 
 When(/^ubico el barco tipo submarino$/) do
-  @batalla_naval.crear_y_ubicar_submarino(@x,@y)
+  @batalla_naval.crear_y_ubicar_submarino(@coordenada)
 end
 
 Then(/^ubicado exitosamente$/) do
-  @batalla_naval.devolver_barco(@x,@y) == @submarino
+  @batalla_naval.devolver_barco(@coordenada) == @submarino
 end
 
 ####################
+
+Given(/^la coordenadas (\d+),(\d+) ocupada$/) do |x, y|
+  @batalla_naval = BatallaNaval.new
+  @coordenada = [x,y]
+  @batalla_naval.crear_y_ubicar_submarino(@coordenada)
+end
+
+When(/^ubico el barco tipo crucero en la coordenada (\d+),(\d+) vertical$/) do |x1, y1|
+  @coordenada_1 = [x1,y1]
+  @resultado = @batalla_naval.crear_y_ubicar_crucero(@coordenada_1,'vertical')
+end
+
+Then(/^no se puede ubicar$/) do
+  @resultado == "coordenada ya ocupada"
+end

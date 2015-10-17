@@ -4,9 +4,9 @@ require 'rspec'
 require_relative '../model/tablero'
 require_relative '../model/submarino'
 
-describe 'Tablero' do
+describe 'Submarino' do
 
-  let(:submarino) { Submarino.new(1,2) }
+  let(:submarino) { Submarino.new([1,2]) }
 
   it 'submarino x = 1' do
     expect(submarino.x).to eq 1
