@@ -48,9 +48,19 @@ describe 'BatallaNaval' do
   it 'verificar que un disparo a la coordenada (5,2) dania a una barco' do
     @coordenada = [5,2]
     batalla_naval.crear_y_ubicar_crucero([5,2],"Vertical")
-    @barco_atacado = batalla_naval.devolver_barco_crucero(@coordenada)
+    @barco_atacado = batalla_naval.devolver_barco(@coordenada)
     @barco_atacado.disparos_recibidos += 1
     expect(@barco_atacado.disparos_recibidos).to eq 1
+    expect(@barco_atacado.estado).to eq "Esta daniado"
   end
-  
+
+  it 'verificar que un disparo a la coordenada (5,2) hundo a una barco tipo submarino' do
+    @coordenada = [5,2]
+    batalla_naval.crear_y_ubicar_submarino([5,2])
+    @barco_atacado = batalla_naval.devolver_barco(@coordenada)
+    @barco_atacado.disparos_recibidos += 1
+    expect(@barco_atacado.disparos_recibidos).to eq 1
+    expect(@barco_atacado.estado).to eq "Esta Hundido"
+  end
+
 end

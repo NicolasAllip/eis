@@ -10,7 +10,7 @@ end
 
 def crear_y_ubicar_submarino(coordenada)
   @submarino = Submarino.new(coordenada)
-  if @submarino.x.to_i > @tablero.cantidad_columnas || @submarino.y.to_i > @tablero.cantidad_filas 
+  if @submarino.primer_x.to_i > @tablero.cantidad_columnas || @submarino.primer_y.to_i > @tablero.cantidad_filas 
     "Fuera del Tablero"
   else
     @tablero.posiciones_ocupadas.include?(coordenada) ? "coordenada ya ocupada" : @tablero.agregar_barco(@submarino)
@@ -42,15 +42,10 @@ end
 
 def devolver_barco(coordenada)
   @tablero.get_barcos.detect do |each|
-    each.x == coordenada.first && each.y == coordenada.last
-  end
-end
-
-def devolver_barco_crucero(coordenada)
-  @tablero.get_barcos.detect do |each|
     each.primer_x == coordenada.first && each.primer_y == coordenada.last
   end
 end
+
 
 def tablero
   @tablero
@@ -60,7 +55,7 @@ def disparo(coordenada)
   if !@tablero.posiciones_ocupadas.include?(coordenada)
     "Agua"
   else
-    @barco_atacado = devolver_barco_crucero(coordenada)
+    @barco_atacado = devolver_barco(coordenada)
     @barco_atacado.disparos_recibidos += 1
     return @barco_atacado.estado
   end
