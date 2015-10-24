@@ -1,3 +1,5 @@
+#Suma
+
 Given(/^voy a la pagina de calculadora$/) do
   visit 'calculadora'
 end
@@ -20,4 +22,15 @@ end
 
 Then(/^el resultado es (\d+)$/) do |resultado|
   expect(page).to have_content(resultado)
+end
+
+
+#Resta
+
+Given(/^eligo el operador restar$/) do
+  select('Resta', from:'operador')
+end
+
+When(/^los resto$/) do
+  click_button('resultado')
 end

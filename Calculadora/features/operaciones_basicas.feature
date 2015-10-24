@@ -7,7 +7,7 @@ Feature: Operaciones basicas
     And otro operando es 2
     When los sumo
     Then el resultado es 7
-@wip
+
   Scenario: resta
     Given voy a la pagina de calculadora 
     And eligo el operador restar

@@ -1,15 +1,21 @@
 class Calculadora
 
+attr_reader :cantidad_operaciones
   def initialize
     @cantidad_operaciones = 0
   end
 
   def suma(op1,op2)
-    @cantidad_operaciones += 1
+    incrementar_cantidad_operaciones
     op1 + op2
   end
+  
+  def resta(op1,op2)
+    incrementar_cantidad_operaciones
+    op1 - op2
+  end
 
-  def cantidad_operaciones
-    @cantidad_operaciones	
+  def incrementar_cantidad_operaciones
+    @cantidad_operaciones += 1
   end
 end

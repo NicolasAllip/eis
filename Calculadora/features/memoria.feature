@@ -19,3 +19,8 @@ Feature: memoria de cantidad de operaciones
     And reseteo la memoria
     Then la cantidad de operaiones es 0
 
+  Scenario: cuando reseteo la cantidad de operaciones vuelve a cero
+    Given voy a la pagina de calculadora 
+    And no hice operaciones
+    And reseteo la memoria
+    Then la cantidad de operaiones es 0
