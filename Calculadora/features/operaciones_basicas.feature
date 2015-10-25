@@ -15,7 +15,7 @@ Feature: Operaciones basicas
     And otro operando es 2
     When los resto
     Then el resultado es 1
-@wip
+
   Scenario: promedio
     Given voy a la pagina de calculadora 
     And eligo el operador promedio 

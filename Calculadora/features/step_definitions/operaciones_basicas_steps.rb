@@ -34,3 +34,13 @@ end
 When(/^los resto$/) do
   click_button('resultado')
 end
+
+#Promedio
+
+Given(/^eligo el operador promedio$/) do
+  select('Promedio', from:'operador')
+end
+
+When(/^saco el promedio entre ellos$/) do
+  click_button('resultado')
+end

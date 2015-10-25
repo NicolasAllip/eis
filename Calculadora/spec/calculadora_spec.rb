@@ -23,5 +23,13 @@ describe 'Calculadora' do
 	expect(calculadora.resta(4,5)).to eq -1
 	expect(calculadora.cantidad_operaciones).to eq 3
   end
+  
+  it 'calculadora promedio 4 y 4 deberia dar 4' do
+	calculadora.resta(4,5)
+	calculadora.suma(4,5)
+	calculadora.promedio(4,4)
+	expect(calculadora.promedio(4,4)).to eq 4
+	expect(calculadora.cantidad_operaciones).to eq 4
+  end
 
 end
