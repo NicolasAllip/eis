@@ -10,7 +10,7 @@ Feature: memoria de cantidad de operaciones
     And hago una suma
     And hago una resta
     Then cantidad de operaciones es 2
-@wip
+
   Scenario: cuando se resetea la cantidad de operaciones vuelve a cero
     Given voy a la pagina de calculadora 
     And hago una suma

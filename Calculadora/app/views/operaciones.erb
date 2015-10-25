@@ -16,11 +16,15 @@
       </select> 
        <label>Ingresar Operando:</label>
       <input id="operando2" type="text" name="operando2">
-      <input type="submit" value="resultado" id="resultado"/>
+      <input type="submit" value="resultado" id="resultado">
     </form>
     resultado <%= @resultado %>
     <br>
     Cantidad de operaciones: <%= @cant_operaciones %>
     </br>
+
+    <form method='GET' action="calculadora">
+       <input type="submit" value="restart" id="restart">
+    </form>
   </body>
 </html>

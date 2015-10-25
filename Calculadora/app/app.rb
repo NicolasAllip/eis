@@ -9,13 +9,11 @@ module Ejemplo
     enable :sessions
 
     get 'calculadora' do
+      @reset = calculadora.resetear_memoria
       render 'operaciones'
     end
 
     post 'calculadora' do
-      params[:operando1]
-      params[:operando2]
-      params[:operador]
       @operando1 = params[:operando1]
       @operando2 = params[:operando2]
       @operador = params[:operador]

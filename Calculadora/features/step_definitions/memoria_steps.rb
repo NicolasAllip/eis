@@ -25,7 +25,12 @@ Given(/^hago una resta$/) do
 end
 
 Then(/^cantidad de operaciones es (\d+)$/) do |cantidad|
-  expect(page).to have_content(2)
+  page.has_content?(cantidad)
 end
 
 ############################
+
+Given(/^reseteo la memoria$/) do
+  click_button('restart')
+end
+
