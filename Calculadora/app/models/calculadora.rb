@@ -20,6 +20,10 @@ attr_reader :cantidad_operaciones
     (suma(op1,op2) / 2)
   end
 
+  def resetear_memoria
+    @cantidad_operaciones = 0
+  end
+
   def incrementar_cantidad_operaciones
     @cantidad_operaciones += 1
   end

@@ -20,6 +20,7 @@ module Ejemplo
       @operando2 = params[:operando2]
       @operador = params[:operador]
       @resultado = calculadora.send(@operador, @operando1.to_i, @operando2.to_i)
+      @cant_operaciones = calculadora.cantidad_operaciones
       render 'operaciones'
     end
   end
