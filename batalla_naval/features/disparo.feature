@@ -1,3 +1,4 @@
+@wip
 Feature: Como usuario quiero disparar a los barcos enemigos
 
 Scenario: Disparo y toco agua

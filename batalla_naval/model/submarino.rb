@@ -1,29 +1,28 @@
+require_relative 'tablero'
+
 class Submarino
 
-attr_accessor :coordenada, :disparos_recibidos
+attr_accessor :coordenada
+
 def initialize(coordenada)
   @coordenada = coordenada
   @tamanio = 1
-  @estado 
-  @disparos_recibidos = 0
 end
 
-def primer_x
-  coordenada.first
+def x
+  @coordenada.first
 end
 
-def primer_y
-  coordenada.last
+def y
+  @coordenada.last
 end
 
-def agregar_coordenadas_ocupadas(posiciones_ocupadas)
-  posiciones_ocupadas.push(coordenada)
+def tiene_coordenada(coordenada)
+  self.x == coordenada.first && self.y == coordenada.last
 end
 
-def estado
-  if @disparos_recibidos == @tamanio
-    return "Esta Hundido"
-  end
+def ubicate(tablero)
+  tablero.posiciones_ocupadas.push(self.coordenada)
 end
 
 end

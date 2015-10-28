@@ -17,13 +17,13 @@ describe 'Tablero' do
     expect(tablero.cantidad_columnas).to eq 5
   end
 
-  it 'cantidad de barcos' do
+  it 'cantidad de barcos inicial es 0' do
     expect(tablero.cantidad_barcos).to eq 0
   end
 
-  it 'cantidad de barcos' do
-  	tablero.agregar_barco(submarino)
-  	tablero.agregar_barco(submarino1)
+  it 'cantidad de barcos es 2' do
+  	tablero.ubicar_barco(submarino)
+  	tablero.ubicar_barco(submarino1)
     expect(tablero.cantidad_barcos).to eq 2
   end  
 end
