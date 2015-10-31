@@ -1,4 +1,5 @@
 require 'rspec'
+require 'pry'
 # require_relative '../model/algun_archivo'
 require_relative '../model/tablero'
 require_relative '../model/submarino'
@@ -15,7 +16,7 @@ describe 'BatallaNaval' do
   end 
 
   it 'verificar que el barco en la coordenada (1,2) es un submarino' do
-    batalla_naval.tablero.ubicar_barco(submarino)
+    batalla_naval.ubicar_barco(submarino)
     expect(batalla_naval.devolver_barco([1,2])).to eq submarino
   end
 

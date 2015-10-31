@@ -2,6 +2,7 @@ require 'rspec'
 # require_relative '../model/algun_archivo'
 require_relative '../model/tablero'
 require_relative '../model/submarino'
+require_relative '../model/batalla_naval'
 
 describe 'Tablero' do
 

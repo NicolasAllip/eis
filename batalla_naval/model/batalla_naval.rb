@@ -1,17 +1,19 @@
 require_relative 'tablero'
 require_relative 'submarino'
+require_relative 'crucero'
 
 class BatallaNaval
-
-attr_accessor :tablero
 
 def initialize
   @tablero = Tablero.new(20,20)
 end
 
-def crear_y_ubicar_submarino(coordenada)
-  @submarino = Submarino.new(coordenada)
-  @tablero.ubicar_barco(@submarino)
+def tablero
+  @tablero
+end
+
+def ubicar_barco(barco)
+  @tablero.ubicar_barco(barco)
 end
 
 def devolver_barco(coordenada)
