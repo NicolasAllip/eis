@@ -2,7 +2,7 @@ require_relative 'submarino'
 
 class Tablero
 
-  attr_accessor :cantidad_barcos
+attr_accessor :cantidad_barcos, :cantidad_filas, :cantidad_columnas
 
 def initialize(filas,columnas)
   @cantidad_filas = filas
@@ -16,12 +16,12 @@ def cantidad_filas
   @cantidad_filas
 end
 
-def cantidad_columnas 
+def cantidad_columnas
   @cantidad_columnas
 end
 
 def ubicar_barco(barco)
-  if barco.si_no_esta_en_posiciones_ocupadas(self)
+  if barco.si_no_esta_en_posiciones_ocupadas(self) && !barco.fuera_del_tablero(self)
     barco.ubicate(self)
   end
 end

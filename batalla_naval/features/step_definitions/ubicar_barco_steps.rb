@@ -38,3 +38,24 @@ end
 Then(/^no se puede ubicar$/) do
   expect(@exception.message).to eq 'coordenada ya ocupada'
 end
+
+
+#######################################################
+
+Given(/^la coordenada (\d+),(\d+)$/) do |x, y|
+  @batalla_naval = BatallaNaval.new
+  @coordenada_submarino = [x,y]
+end
+
+When(/^ubico el barco tipo submarino en esa coordenada dada$/) do
+  @submarino = Submarino.new(@coordenada_submarino)
+  begin
+    @batalla_naval.ubicar_barco(@submarino)
+  rescue Exception => e
+     @exception = e
+   end
+end
+
+Then(/^fuera del tablero$/) do
+  expect(@exception.message).to eq "fuera del tablero"
+end

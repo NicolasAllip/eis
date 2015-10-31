@@ -31,6 +31,14 @@ def si_no_esta_en_posiciones_ocupadas(tablero)
   end
 end
 
+def fuera_del_tablero(tablero)
+  @fuera_tablero_primer_coordenada = tablero.cantidad_filas.to_i < coordenada_inicial.last.to_i || tablero.cantidad_columnas.to_i < coordenada_inicial.first.to_i
+  @fuera_tablero_segunda_coordenada = tablero.cantidad_filas.to_i < segunda_coordenada.last.to_i || tablero.cantidad_columnas.to_i < segunda_coordenada.first.to_i
+  if @fuera_tablero_primer_coordenada || @fuera_tablero_segunda_coordenada
+    raise 'fuera del tablero'
+  end
+end
+
 def ubicate(tablero)
   if si_no_esta_en_posiciones_ocupadas(tablero)
     tablero.posiciones_ocupadas.push(@coordenada_inicial)

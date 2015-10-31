@@ -11,8 +11,8 @@ Feature: Como usuario quiero ubicar mis barcos
     When ubico el barco tipo crucero en la coordenada 1,1 vertical
     Then no se puede ubicar
 
-@wip
+
    Scenario: No puedo ubicar mi barco en una posición fuera del tablero
-     Given la coordenada 20,30 
+     Given la coordenada 50,50 
      When ubico el barco tipo submarino en esa coordenada dada
      Then fuera del tablero
