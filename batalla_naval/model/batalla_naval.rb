@@ -20,4 +20,8 @@ def devolver_barco(coordenada)
   @tablero.barco(coordenada)
 end
 
+def disparo(coordenada)
+  @tablero.disparo(coordenada)
+end
+
 end

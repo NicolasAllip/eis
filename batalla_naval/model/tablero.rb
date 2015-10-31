@@ -40,4 +40,9 @@ def posiciones_ocupadas
   @posiciones_ocupadas
 end
 
+def disparo(coordenada)
+  if !@posiciones_ocupadas.include?(coordenada)
+    raise "agua"
+  end 
+end  
 end
