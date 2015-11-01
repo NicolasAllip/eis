@@ -57,5 +57,5 @@ When(/^ubico el barco tipo submarino en esa coordenada dada$/) do
 end
 
 Then(/^fuera del tablero$/) do
-  expect(@exception.message).to eq "fuera del tablero"
+  expect(@exception.message).to eq 'fuera del tablero'
 end

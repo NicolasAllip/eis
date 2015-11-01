@@ -12,7 +12,7 @@ def coordenada
 end
 
 def tiene_coordenada(coordenada)
-  @coordenada.first == coordenada.first && @coordenada.last == coordenada.last
+  @coordenada.first.to_i == coordenada.first.to_i && @coordenada.last.to_i == coordenada.last.to_i
 end
 
 def ubicate(tablero)
@@ -21,15 +21,20 @@ def ubicate(tablero)
   tablero.cantidad_barcos += 1
 end
 
-def  si_no_esta_en_posiciones_ocupadas(tablero)
-  !tablero.posiciones_ocupadas.include? (self)
+def  esta_en_posiciones_ocupadas(tablero)
+  if tablero.posiciones_ocupadas.include?(@coordenada)
+    raise 'coordenada ya ocupada'
+  end
 end
 
 def fuera_del_tablero(tablero)
   @fuera_tablero = tablero.cantidad_filas.to_i < @coordenada.last.to_i || tablero.cantidad_columnas.to_i < @coordenada.first.to_i
   if @fuera_tablero
-    raise "fuera del tablero"
+    raise 'fuera del tablero'
   end
 end
 
+def herido_o_hundido
+  raise 'hundido'
+end
 end

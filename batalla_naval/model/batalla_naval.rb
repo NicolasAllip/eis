@@ -4,6 +4,7 @@ require_relative 'crucero'
 
 class BatallaNaval
 
+attr_accessor :tablero
 def initialize
   @tablero = Tablero.new(20,20)
 end

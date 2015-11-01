@@ -21,3 +21,21 @@ end
 
 #####################################
 
+Given(/^la coordenada (\d+),(\d+) esta ocupada por un crucero$/) do |x, y|
+  @batalla_naval = BatallaNaval.new
+  @coordenada = [x,y]
+  @crucero = Crucero.new(@coordenada,'vertical')
+  @batalla_naval.ubicar_barco(@crucero)
+end
+
+When(/^disparo a la coordenada dada$/) do
+  begin
+    @batalla_naval.disparo(@coordenada)
+  rescue Exception => e
+     @exception = e
+   end
+end
+
+Then(/^daño una parte del barco tipo crucero pero no lo hundo$/) do
+  expect(@exception.message).to eq 'barco daniado'
+end

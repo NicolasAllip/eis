@@ -21,7 +21,7 @@ def cantidad_columnas
 end
 
 def ubicar_barco(barco)
-  if barco.si_no_esta_en_posiciones_ocupadas(self) && !barco.fuera_del_tablero(self)
+  if !barco.esta_en_posiciones_ocupadas(self) && !barco.fuera_del_tablero(self)
     barco.ubicate(self)
   end
 end
@@ -42,7 +42,14 @@ end
 
 def disparo(coordenada)
   if !@posiciones_ocupadas.include?(coordenada)
-    raise "agua"
-  end 
-end  
+    raise 'agua' 
+  else
+    self.recibio_disparo(self.barco(coordenada))
+  end  
+end
+
+def recibio_disparo(barco)
+  barco.herido_o_hundido
+end
+
 end
