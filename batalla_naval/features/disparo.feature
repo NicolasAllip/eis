@@ -12,7 +12,6 @@ Scenario: Disparo y toco un barco pero no lo hundo
   When disparo a la coordenada dada
   Then daño una parte del barco tipo crucero pero no lo hundo
 
-@wip
 Scenario: Disparo y toco un barco y lo hundo
   
   Given la coordenada 10,10 ocupada por un submarino
